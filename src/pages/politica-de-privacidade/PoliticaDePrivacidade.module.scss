@@ -1,0 +1,36 @@
+.content {
+    margin-bottom: 40px;
+
+    h2,
+    h3 {
+        padding: 0px 20px;
+    }
+
+    .p {
+        padding: 0px 20px;
+        text-align: justify;
+    }
+
+    ul {
+        padding: 0px 40px;
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .content {
+
+        h2,
+        h3 {
+            padding: 0px 70px;
+        }
+
+        .p {
+            padding: 0px 70px;
+        }
+
+        ul {
+            padding: 0px 90px;
+        }
+    }
+}

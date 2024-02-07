@@ -1,0 +1,176 @@
+.vascoBackground, .flamengoBackground, .fluminenseBackground, .botafogoBackground, .genericBackground {
+  width: max-content;
+  height: fit-content;
+  font-size: 0.68rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2px;
+  padding: 2.5px 6px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.genericBackground {
+  background-color: #FCCF40;
+  color: #000000;
+}
+
+.botafogoBackground {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 1.5px 5px;
+}
+
+.fluminenseBackground {
+  background-color: #027600;
+  color: #FFFFFF;
+}
+
+.flamengoBackground {
+  background-color: #A10202;
+  color: #FFFFFF;
+}
+
+.vascoBackground {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.hr {
+  margin: 5% 5%;
+}
+
+.ad {
+  width: 90%;
+  height: 100px;
+  background-color: #EAEAEA;
+  margin: auto;
+}
+
+.buttonArea {
+  width: calc(90vw - 40px);
+  background-color: #EAEAEA;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonArea .button {
+  font-size: 1rem;
+  color: #000000;
+  background-color: #FCCF40;
+  border: 0px;
+  border-radius: 80px;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.buttonArea .button:last-child {
+  margin-bottom: 0px;
+}
+.buttonArea svg {
+  font-size: 0.9rem;
+  margin-right: 7px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .genericBackground, .botafogoBackground, .fluminenseBackground, .flamengoBackground, .vascoBackground {
+    font-size: 0.85rem;
+    margin-right: 3px;
+    padding: 4px 8px;
+  }
+  .botafogoBackground {
+    padding: 3px 7px;
+  }
+  .greatingsAdminContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .menuAndContent {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+  }
+  .buttonArea {
+    width: calc(90% - 40px);
+    max-width: 1920px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+  .buttonArea .button {
+    width: fit-content;
+    max-width: 300px;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding: 10px 25px;
+    cursor: pointer;
+  }
+  .buttonArea:first-child {
+    margin-left: 0px;
+  }
+}
+@media only print {
+  .genericBackground, .botafogoBackground, .fluminenseBackground, .flamengoBackground, .vascoBackground {
+    display: none;
+  }
+  .ad {
+    display: none;
+  }
+}
+html,
+body {
+  margin: 0;
+  font-size: 14px;
+}
+
+main {
+  max-width: 1920px;
+  min-height: calc(100vh - 410px);
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #C97800;
+}
+
+.title {
+  font-size: 2.05rem;
+  font-weight: 800;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+svg {
+  font-size: 13px;
+}
+
+.noMoreNewsAdvice {
+  text-align: center;
+  transition: 0.5s linear;
+  padding-bottom: 15px;
+}
+
+hr {
+  border: 1px solid #EAEAEA;
+}
+
+@media only screen and (min-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+    padding: 40px 0px;
+  }
+}
+
+/*# sourceMappingURL=globals.css.map */

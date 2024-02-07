@@ -1,0 +1,174 @@
+//Cores
+$cor-principal: #FCCF40;
+$cor-link: #C97800;
+$branco: #FFFFFF;
+$cinza-claro: #F4F4F4;
+$cinza-medio: #EAEAEA;
+$cinza-escuro: #888888;
+$preto: #000000;
+$verde: #027600;
+$vermelho: #A10202;
+$greatings-background: #F7F7F7;
+
+//Tamanhos
+$maxScreenWidth: 1920px;
+$headerHeight: 90px;
+$headerPaddingTop: 20px;
+$footerHeight: 250px;
+$copyrightHeight: 50px;
+
+// Tag do time
+%tag {
+    width: max-content;
+    height: fit-content;
+    font-size: 0.68rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 2px;
+    padding: 2.5px 6px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.genericBackground {
+    @extend %tag;
+    background-color: $cor-principal;
+    color: $preto;
+}
+
+.botafogoBackground {
+    @extend %tag;
+    background-color: $branco;
+    color: $preto;
+    border: 1px solid $preto;
+    padding: 1.5px 5px;
+}
+
+.fluminenseBackground {
+    @extend %tag;
+    background-color: $verde;
+    color: $branco;
+}
+
+.flamengoBackground {
+    @extend %tag;
+    background-color: $vermelho;
+    color: $branco;
+}
+
+.vascoBackground {
+    @extend %tag;
+    background-color: $preto;
+    color: $branco;
+}
+
+.hr {
+    margin: 5% 5%;
+}
+
+.ad {
+    width: 90%;
+    height: 100px;
+    background-color: $cinza-medio;
+    margin: auto;
+}
+
+// Botões Telas Admin
+.buttonArea {
+    width: calc(90vw - (20px * 2));
+    background-color: $cinza-medio;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .button {
+        font-size: 1rem;
+        color: $preto;
+        background-color: $cor-principal;
+        border: 0px;
+        border-radius: 80px;
+        padding: 12px 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    svg {
+        font-size: 0.9rem;
+        margin-right: 7px;
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+
+    // Tag do time
+    %tag {
+        font-size: 0.85rem;
+        margin-right: 3px;
+        padding: 4px 8px;
+    }
+
+    .botafogoBackground {
+        padding: 3px 7px;
+    }
+
+    // Mensagens de saudação da tela do administrador
+    .greatingsAdminContent {
+        display: flex;
+        flex-direction: row;
+    }
+
+    // Menu lateral das telas de administrador
+    .menuAndContent {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    .buttonArea {
+        width: calc(90% - (20px * 2));
+        max-width: $maxScreenWidth;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        justify-content: flex-end;
+        flex-direction: row;
+
+        .button {
+            width: fit-content;
+            max-width: 300px;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            margin-bottom: 0px;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        &:first-child {
+            margin-left: 0px;
+        }
+    }
+
+}
+
+// Estilo para impressão
+@media only print {
+    %tag {
+        display: none;
+    }
+
+    .ad {
+        display: none;
+    }
+}

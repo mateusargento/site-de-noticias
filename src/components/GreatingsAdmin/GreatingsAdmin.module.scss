@@ -1,0 +1,54 @@
+@import '@/pages/styles/variables.scss';
+
+.greatings {
+    width: fit-content;
+    padding: 15px 0px 0px 15px;
+
+    .greatingsContent {
+        font: {
+            size: 1.2rem;
+            weight: 400;
+        }
+
+        background-color: $cinza-medio;
+        border: none;
+        border-radius: 7px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin: 0px 7px 0px 7px;
+        }
+
+        .logoutButton {
+            font-size: 1.2rem;
+            background-color: transparent;
+            color: $cor-link;
+            border: none;
+            margin-left: 20px;
+            padding: 0px;
+        }
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .greatings {
+        padding: 20px 0px 0px 20px;
+
+        .greatingsContent {
+            font-size: 1.25rem;
+            padding: 12px 23px;
+
+            svg {
+                margin: 0px 10px 0px 0px;
+            }
+
+            .logoutButton {
+                font-size: 1.25rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

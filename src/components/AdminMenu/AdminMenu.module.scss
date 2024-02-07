@@ -1,0 +1,103 @@
+@import '@/pages/styles/variables.scss';
+
+.aside {
+    width: calc(100% - (10px * 2));
+    height: 65px;
+    background-color: $cinza-medio;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    top: calc(100% - 65px - (10px * 2));
+    overflow: scroll;
+    z-index: 1;
+
+    h2 {
+        display: none;
+    }
+
+    .button {
+        font-size: 1rem;
+        color: $preto;
+        border-radius: 12px;
+        margin-right: 5px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        svg {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .buttonText {
+            width: 80px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .activeButton {
+        background-color: $cor-principal;
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .aside {
+        width: calc(100% - (20px * 2));
+        max-width: calc(20% - (20px * 2));
+        height: auto;
+        border-radius: 12px;
+        margin: 0px 0px 15px 40px;
+        padding: 0px 20px 30px 20px;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        overflow: auto;
+        z-index: 1;
+
+        h2 {
+            display: block;
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            max-width: none;
+            font-size: 1.1rem;
+            border-radius: 100px;
+            margin: 0px 0px 10px 0px;
+            padding: 10px 20px;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            white-space: nowrap;
+            overflow: hidden;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+
+            svg {
+                font-size: 1.1rem;
+                margin: 0px 12px 0px 0px;
+            }
+
+            .buttonText {
+                width: 100%;
+                text-align: start;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import '@/pages/styles/variables.scss';
+
+.advice {
+    width: calc(100% - (25px * 2));
+    height: 145px;
+    background-color: $cinza-medio;
+    padding: 25px;
+    position: fixed;
+    z-index: 100;
+    top: calc(100% - 145px - (25px * 2));
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s linear;
+
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        p {
+            text-align: justify;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .button {
+            width: 100%;
+            margin: 0px;
+        }
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .advice {
+        width: calc(100% - (20px * 2));
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        top: calc(100% - 90px - (20px * 2));
+
+        .content {
+            width: calc(100% - 50px);
+            max-width: $maxScreenWidth;
+            display: grid;
+            grid-template-columns: 70% 25%;
+            gap: 50px;
+            align-items: center;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        .button {
+            max-width: 450px;
+        }
+    }
+}

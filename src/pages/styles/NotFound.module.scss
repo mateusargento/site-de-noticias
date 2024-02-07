@@ -1,0 +1,130 @@
+@import './variables.scss';
+
+$mobileHeight: 50vh;
+
+.imageBackground {
+    width: calc(100% - (20px * 2));
+    height: calc($mobileHeight - 10px);
+    margin: 0px 20px;
+    top: 90px;
+    object-fit: cover;
+}
+
+.background {
+    width: 100%;
+    width: calc(100% - (20px * 2));
+    height: $mobileHeight;
+    max-width: $maxScreenWidth;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: absolute;
+    top: 74px;
+    text-align: center;
+
+    .title {
+        height: ($mobileHeight / 2);
+        background-color: $branco;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        mix-blend-mode: screen;
+
+        font: {
+            size: 8rem;
+            weight: 900;
+        }
+    }
+
+    .content {
+        height: calc($mobileHeight / 2);
+        background-color: $branco;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: green;
+            margin: 0px;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        .button {
+            margin: 0px;
+        }
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    $desktopHeight: 650px;
+    $desktopMaxHeight: 1080px;
+
+    .imageBackground {
+        width: 100%;
+        height: calc($desktopHeight - 10px);
+        max-height: calc($desktopMaxHeight - 10px);
+        margin: 0px;
+        top: 90px;
+        object-fit: cover;
+    }
+
+    .background {
+        width: 100%;
+        max-width: $maxScreenWidth;
+        height: $desktopHeight;
+        max-height: $desktopMaxHeight;
+        margin: 0px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: absolute;
+        top: calc($headerHeight + $headerPaddingTop);
+        text-align: center;
+
+        .title {
+            height: ($desktopHeight / 2);
+            background-color: $branco;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            mix-blend-mode: screen;
+
+            font: {
+                size: 20rem;
+                weight: 900;
+            }
+        }
+
+        .content {
+            height: calc($desktopHeight / 2);
+            background-color: $branco;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .subtitle {
+                font-size: 1.4rem;
+                color: green;
+                margin: 0px;
+            }
+
+            p {
+                margin: 15px 0;
+            }
+
+            .button {
+                margin: 0px;
+            }
+        }
+    }
+}

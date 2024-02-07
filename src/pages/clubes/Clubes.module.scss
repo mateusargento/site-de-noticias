@@ -1,0 +1,47 @@
+@import '@/pages/styles/variables.scss';
+
+// Título da página
+%title {
+    width: 70%;
+
+    font: {
+        size: 2.1rem;
+        weight: 800;
+    }
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.botafogo {
+    @extend %title;
+    border-bottom: 3px solid $preto;
+}
+
+.flamengo {
+    @extend %title;
+    border-bottom: 3px solid $vermelho;
+}
+
+.fluminense {
+    @extend %title;
+    border-bottom: 3px solid $verde;
+}
+
+.vasco {
+    @extend %title;
+    border-bottom: 3px solid $preto;
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    %title {
+        width: 30%;
+
+        font: {
+            size: 2.5rem;
+        }
+    }
+}

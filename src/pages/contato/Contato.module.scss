@@ -1,0 +1,29 @@
+@import '@/pages/styles/variables.scss';
+
+.p {
+    padding: 0px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Formulário de contato
+.form {
+    width: calc(100% - (20px * 2));
+    margin: 0px auto 70px auto;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .p {
+        padding: 0px 70px;
+    }
+
+    // Formulário de contato
+    .form {
+        width: 550px;
+    }
+}

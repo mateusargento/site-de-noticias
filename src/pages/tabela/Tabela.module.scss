@@ -1,0 +1,490 @@
+@import '@/pages/styles/variables.scss';
+
+// Título da página
+.title {
+    width: 70%;
+
+    font: {
+        size: 2.1rem;
+        weight: 800;
+    }
+
+    border-bottom: 3px solid $preto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+// Título da fase da competição
+.matchWeekTitle {
+    background-color: $cor-principal;
+    margin: 0px 20px;
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        background-color: transparent;
+        border: 0px;
+        cursor: pointer;
+
+        svg {
+            font-size: 1.3rem;
+        }
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin: 0px;
+    }
+}
+
+// Conteúdo da fase de grupos
+.groupStageContent {
+    width: calc(100% - 20px);
+    margin: auto;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: auto;
+
+    // Título dos grupos
+    .groupStageTitle {
+        font-size: 1.5rem;
+        margin: 50px 0px 0px 0px;
+    }
+
+    // Tabela do campeonato na fase de grupos
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        white-space: nowrap;
+
+        thead {
+            background-color: $cor-principal;
+        }
+
+        th,
+        td {
+            border: 1px solid $cinza-medio;
+            padding: 10px 20px;
+        }
+
+        // Cores das classificações para as competições
+        .qualified {
+            color: $branco;
+            background-color: #009933;
+        }
+
+        .sulamericana,
+        .playoffs {
+            color: $branco;
+            background-color: #0065ff;
+        }
+
+        .tableTeam {
+            width: 50%;
+            text-align: start;
+        }
+
+        // Pontuação do time
+        .tablePoints {
+            font-weight: bold;
+        }
+
+        // Estilo zebrado na tabela
+        tr {
+            &:nth-child(even) {
+                background-color: $cinza-claro;
+            }
+        }
+    }
+
+    // Partidas fase de grupos
+    .matches {
+        width: calc(100% - 20px);
+        text-align: center;
+        border: 1px solid $cinza-medio;
+
+        // Rodada que está sendo exibida
+        .matchesTitle {
+            background-color: $cor-principal;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+            }
+
+            span {
+                font-weight: bold;
+                margin: 0px;
+            }
+        }
+
+        .matchesContent {
+            padding: 15px 0px;
+
+            &:nth-child(even) {
+                background-color: $cinza-claro;
+            }
+
+            // Data, hora e estádio
+            .matchInfo {
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding-bottom: 10px;
+
+                p {
+                    margin: 0px;
+                }
+            }
+
+            // Placar do jogo
+            .matchScore {
+                width: calc(100% - (10px * 2));
+                border-bottom: 1px solid $cinza-medio;
+                margin: auto;
+                padding: 0px 5px;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 40% 20% 40%;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .matchTeam {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+// Partidas da fase de qualificação
+.matchesQualifyRound {
+    text-align: center;
+    border-bottom: 1px solid $cinza-medio;
+    padding: 25px 0px;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    // Data, hora e estádio das fases de classificação
+    .matchInfoQualifyRound {
+        font-size: 0.9rem;
+        padding-bottom: 18px;
+
+        p {
+            margin: 0px;
+        }
+    }
+
+    // Placar do jogo das fases de classificação
+    .matchScoreQualifyRound {
+        width: calc(100% - (10px * 2));
+        font-size: 1.2rem;
+        padding: 0px 5px;
+        margin: auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 40% 20% 40%;
+
+        .matchTeam {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
+// Efeito zebrado de um em um
+.matchesQualifyRoundSingleMatch {
+
+    &:nth-child(even) {
+        background-color: $cinza-claro;
+    }
+}
+
+// Efeito zebrado de dois em dois
+.matchesQualifyRoundTwoMatches {
+
+    &:nth-child(4n),
+    &:nth-child(4n-1) {
+        background-color: $cinza-claro;
+    }
+}
+
+// Legenda
+.caption {
+    font-size: 0.8rem;
+    padding: 20px 0 0 20px;
+
+    p {
+        margin: 0px 0px 10px 0px;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+
+        div {
+            padding-right: 5px;
+        }
+    }
+}
+
+// Estilo dos slides
+.swiperGroupStage {
+    width: calc(100% - (20px * 2));
+    border: 1px solid $cinza-medio;
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1300px) {
+    .title {
+        width: 40%;
+
+        font: {
+            size: 2.5rem;
+        }
+    }
+
+    // Título da fase da competição
+    .matchWeekTitle {
+        background-color: $cor-principal;
+        margin: 0px 70px;
+        padding: 8px 90px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            background-color: transparent;
+            border: 0px;
+            cursor: pointer;
+
+            svg {
+                font-size: 1.5rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 0px;
+        }
+    }
+
+    // Conteúdo da fase de grupos
+    .groupStageContent {
+        width: calc(100% - (20px * 2));
+        margin: auto;
+        display: grid;
+        grid-template-columns: calc(70% - 7.5px) calc(30% - 7.5px);
+        gap: 15px;
+        overflow: visible;
+
+        // Título dos grupos
+        .groupStageTitle {
+            font-size: 1.5rem;
+            margin: 50px 0px 0px 0px;
+        }
+
+        // Tabela do campeonato na fase de grupos
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            white-space: nowrap;
+
+            thead {
+                background-color: $cor-principal;
+            }
+
+            th,
+            td {
+                border: 1px solid $cinza-medio;
+                padding: 10px 20px;
+            }
+
+            .tableTeam {
+                width: 50%;
+                text-align: start;
+            }
+
+            // Pontuação do time
+            .tablePoints {
+                font-weight: bold;
+            }
+
+            // Estilo zebrado na tabela
+            tr {
+                &:nth-child(even) {
+                    background-color: $cinza-claro;
+                }
+            }
+        }
+
+        // Partidas fase de grupos
+        .matches {
+            text-align: center;
+            border: 1px solid $cinza-medio;
+
+            // Rodada que está sendo exibida
+            .matchesTitle {
+                background-color: $cor-principal;
+                padding: 10px 40px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    background-color: transparent;
+                    border: 0px;
+                    cursor: pointer;
+                }
+
+                span {
+                    font-weight: bold;
+                    margin: 0px;
+                }
+            }
+
+            .matchesContent {
+                padding: 15px 0px;
+
+                &:nth-child(even) {
+                    background-color: $cinza-claro;
+                }
+
+                // Data, hora e estádio
+                .matchInfo {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    padding-bottom: 10px;
+
+                    p {
+                        margin: 0px;
+                    }
+                }
+
+                // Placar do jogo
+                .matchScore {
+                    width: calc(100% - (10px * 2));
+                    border-bottom: 1px solid $cinza-medio;
+                    margin: auto;
+                    padding: 0px 5px;
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: 40% 20% 40%;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    .matchTeam {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    // Partidas da fase de qualificação
+    .matchesQualifyRound {
+        text-align: center;
+        border-bottom: 1px solid $cinza-medio;
+        padding: 25px 0px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        // Data, hora e estádio das fases de classificação
+        .matchInfoQualifyRound {
+            font-size: 0.9rem;
+            padding-bottom: 18px;
+
+            p {
+                margin: 0px;
+            }
+        }
+
+        // Placar do jogo das fases de classificação
+        .matchScoreQualifyRound {
+            width: calc(100% - (10px * 2));
+            font-size: 1.3rem;
+            padding: 0px 5px;
+            margin: auto;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 40% 20% 40%;
+
+            .matchTeam {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    // Efeito zebrado de um em um
+    .matchesQualifyRoundSingleMatch {
+
+        &:nth-child(even) {
+            background-color: $cinza-claro;
+        }
+    }
+
+    // Efeito zebrado de dois em dois
+    .matchesQualifyRoundTwoMatches {
+
+        &:nth-child(4n),
+        &:nth-child(4n-1) {
+            background-color: $cinza-claro;
+        }
+    }
+
+    // Legenda
+    .caption {
+        font-size: 0.8rem;
+        padding: 20px 0 0 20px;
+
+        p {
+            margin: 0px 0px 10px 0px;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: row;
+
+            div {
+                padding-right: 5px;
+            }
+        }
+    }
+
+    // Estilo dos slides
+    .swiperGroupStage {
+        width: calc(100% - (70px * 2));
+        border: 1px solid $cinza-medio;
+    }
+}

@@ -1,0 +1,30 @@
+@import '@/pages/styles/variables.scss';
+
+.button {
+    width: 70vw;
+    font-size: 1rem;
+    background: $cor-principal;
+    border: none;
+    margin: auto;
+    padding: 12px 0px;
+    border-radius: 500px;
+    
+    &:disabled {
+        color: $preto;
+    }
+}
+
+.icon {
+    font-size: 1.1rem;
+    margin: 0px 7px -1px 0px;
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .button {
+        width: 550px;
+        font-size: 1.1rem;
+        padding: 15px 0px;
+        cursor: pointer;
+    }
+}

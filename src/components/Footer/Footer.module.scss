@@ -1,0 +1,91 @@
+@import '@/pages/styles/variables.scss';
+
+.footer {
+    max-width: 100vw;
+    background-color: $cinza-claro;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    // Logo
+    .logo {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // Links
+    .nav {
+        margin: 15px 0px 30px 0px;
+        text-align: center;
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            p {
+                font-weight: bold;
+            }
+
+            a {
+                color: $preto;
+                padding: 5px 0px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// Parte abaixo do rodapé
+.copyright {
+    height: $copyrightHeight;
+    background-color: $cinza-medio;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .footer {
+        $footerPaddingRight: 50px;
+        $footerPaddingLeft: 50px;
+
+        max-width: calc($maxScreenWidth - ($footerPaddingRight + $footerPaddingLeft));
+        height: $footerHeight;
+        padding: 20px $footerPaddingRight 0px $footerPaddingLeft;
+        display: grid;
+        grid-template-columns: 20% 80%;
+
+        // Links
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            // .section {
+            //     padding-left: 200px;
+            // }
+        }
+    }
+
+    // Parte abaixo do rodapé
+    .copyright {
+        width: 100%;
+        max-width: $maxScreenWidth;
+        margin: auto;
+    }
+}
+
+// Estilo para impressão
+@media only print {
+    .footer {
+        display: none;
+    }
+
+    .copyright {
+        display: none;
+    }
+}

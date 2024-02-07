@@ -1,0 +1,297 @@
+@import '@/pages/styles/variables.scss';
+
+.header {
+
+    // Remove o menu desktop
+    .menuContent {
+        display: none;
+    }
+
+    // Logo
+    .logo {
+        padding-top: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+            width: 148px;
+            height: 45px;
+        }
+    }
+
+    .menuIconMobileClose,
+    .menuIconMobileOpen {
+        position: absolute;
+        top: 33px;
+        left: 20px;
+
+        svg {
+            width: 30px;
+            font-size: 30px;
+        }
+    }
+
+    .menuContentMobile {
+        background-color: $cinza-claro;
+        width: 100vw;
+        height: 110%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        transition: 0.15s linear;
+        z-index: 2;
+        overflow: auto;
+
+        // Links
+        .nav {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 90px;
+
+            .link {
+                font-size: 1.7rem;
+                color: $preto;
+                margin-bottom: 25px;
+                text-decoration: none;
+            }
+
+        }
+
+        // Caixa de pesquisa
+        .searchBox {
+            font-size: 1.3rem;
+            height: 55px;
+            border: none;
+            border-radius: 25px;
+            background-color: $cinza-medio;
+            padding: 0px 50px 0px 30px;
+        }
+
+        .searchBoxButton {
+            background-color: transparent;
+            border: none;
+            margin: -35px -230px 80px 0px;
+            cursor: pointer;
+
+            .searchBoxIcon {
+                width: 16px;
+            }
+        }
+
+        // Menu dropdown
+        .dropdownContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .link {
+                margin-bottom: 0px;
+            }
+
+            // Ícone ao lado do link para acessar o menu dropdown
+            .icon {
+                margin: 5px 0px 0px 5px;
+                vertical-align: 0px;
+                transition: 0.15s linear;
+            }
+
+            // Links dentro do dropdown
+            .dropdownLinks {
+                width: calc(100vw - (15px * 2));
+                height: 0px;
+                background-color: $cinza-medio;
+                margin-bottom: 25px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5s cubic-bezier(.68, -0.55, .265, 1.55);
+                overflow: hidden;
+
+                a {
+                    text-decoration: none;
+                    color: $preto;
+                }
+
+                hr {
+                    width: 80%;
+                    background-color: $cinza-escuro;
+                }
+            }
+        }
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1024px) {
+    .header {
+        $headerPaddingRight: 74px;
+        $headerPaddingLeft: 45px;
+
+        max-width: calc($maxScreenWidth - ($headerPaddingRight + $headerPaddingLeft));
+        height: $headerHeight;
+        margin: auto;
+        padding: $headerPaddingTop $headerPaddingRight 0 $headerPaddingLeft;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        // Remove o menu mobile
+        .menuContentMobile,
+        .menuIconMobileOpen,
+        .menuIconMobileClose {
+            display: none;
+        }
+
+        .logo {
+            padding-top: 0px;
+
+            img {
+                width: 155px;
+                height: 50px;
+            }
+        }
+
+        .menuContent {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            // Links
+            .nav {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .link {
+                    color: $preto;
+                    border-bottom: 1px solid transparent;
+                    margin: 0px 35px;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    transition: 0.15s linear;
+
+                    &:hover {
+                        border-bottom: 1px solid $cor-principal;
+                        transition: 0.15s linear;
+                    }
+                }
+            }
+
+            // Caixa de pesquisa
+            .searchBox {
+                font-size: 14px;
+                height: 45px;
+                border: none;
+                border-radius: 25px;
+                background-color: $cinza-medio;
+                padding: 0px 50px 0 30px;
+            }
+
+            .searchBoxButton {
+                background-color: transparent;
+                border: none;
+                margin-left: -45px;
+                cursor: pointer;
+
+                .searchBoxIcon {
+                    width: 16px;
+                }
+            }
+        }
+
+        // Menu dropdown
+        .dropdownContent {
+            display: flex;
+
+            // Ao posicionar o mouse no link
+            &:hover {
+
+                // Abre o dropdown
+                .dropdownLinks {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: 0.15s linear;
+                }
+
+                .icon {
+                    transform: rotatex(-180deg);
+                    vertical-align: -0.125em;
+                    transition: 0.15s linear;
+                }
+            }
+
+            // Ícone ao lado do link para acessar o menu dropdown
+            .icon {
+                margin: 5px 0px 0px 5px;
+                transition: 0.15s linear;
+            }
+
+            // Links dentro do dropdown
+            .dropdownLinks {
+                width: 200px;
+                background-color: $cinza-claro;
+                border-radius: 8px;
+                margin-left: -40px;
+                padding: 20px 15px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.15s linear;
+                z-index: 2;
+
+                a {
+                    text-decoration: none;
+                    color: $preto;
+                    transition: 0.15s linear;
+
+                    &:hover {
+                        color: $cor-link;
+                        transition: 0.15s linear;
+                    }
+                }
+
+                hr {
+                    width: 90%;
+                    background-color: $cinza-escuro;
+                }
+            }
+        }
+    }
+}
+
+// Estilo para impressão
+@media only print {
+    .header {
+        .logo {
+            padding-top: 0px;
+
+            img {
+                width: 180px;
+                height: 55px;
+            }
+        }
+    }
+
+    .menuIconMobileClose,
+    .menuIconMobileOpen,
+    .menuContentMobile {
+        display: none;
+    }
+}

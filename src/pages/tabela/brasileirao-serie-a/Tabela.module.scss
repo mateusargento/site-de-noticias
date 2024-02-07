@@ -1,0 +1,199 @@
+@import '@/pages/styles/variables.scss';
+
+// Título da página
+.title {
+    width: 70%;
+
+    font: {
+        size: 2.1rem;
+        weight: 800;
+    }
+
+    border-bottom: 3px solid $preto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.content {
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: auto;
+
+    // Tabela do campeonato
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        white-space: nowrap;
+
+        th,
+        td {
+            border: 1px solid $cinza-medio;
+            padding: 10px 20px;
+        }
+
+        // Cores das classificações para as competições
+        .libertadores {
+            color: $branco;
+            background-color: #009933;
+        }
+
+        .prelibertadores {
+            background-color: #ffcc00;
+        }
+
+        .sulamericana {
+            color: $branco;
+            background-color: #0065ff;
+        }
+
+        .zonarebaixamento {
+            color: $branco;
+            background-color: #cc0000;
+        }
+
+        // Time
+        .tableTeam {
+            width: 50%;
+            text-align: start;
+        }
+
+        // Pontuação do time
+        .tablePoints {
+            font-weight: bold;
+        }
+
+        thead {
+            background-color: $cor-principal;
+        }
+
+        // Estilo zebrado na tabela
+        tr {
+            &:nth-child(even) {
+                background-color: $cinza-claro;
+            }
+        }
+    }
+
+    // Partidas
+    .matches {
+        width: calc(100% - 20px);
+        text-align: center;
+        border: 1px solid $cinza-medio;
+
+        // Rodada que está sendo exibida
+        .matchesTitle {
+            background-color: $cor-principal;
+            padding: 10px 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                background-color: transparent;
+                border: 0px;
+                cursor: pointer;
+            }
+
+            span {
+                font-weight: bold;
+                margin: 0px;
+            }
+        }
+
+        .matchesContent {
+            padding: 15px 0px;
+
+            &:nth-child(even) {
+                background-color: $cinza-claro;
+            }
+
+            // Data, hora e estádio
+            .matchInfo {
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding-bottom: 10px;
+
+                p {
+                    margin: 0px;
+                }
+            }
+
+            // Placar do jogo
+            .matchScore {
+                width: calc(100% - (10px * 2));
+                border-bottom: 1px solid $cinza-medio;
+                margin: auto;
+                padding: 0px 5px;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 40% 20% 40%;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .matchTeam {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+// Legenda
+.caption {
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+    padding: 25px 0px 0px 20px;
+
+    p {
+        margin: 0px 0px 10px 0px;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+
+        div {
+            padding-right: 5px;
+        }
+    }
+}
+
+// Estilo Desktop
+@media only screen and (min-width: 1300px) {
+    .title {
+        width: 40%;
+
+        font: {
+            size: 2.5rem;
+        }
+    }
+
+    .content {
+        width: calc(100% - (70px * 2));
+        margin: 0px 70px;
+        display: grid;
+        grid-template-columns: calc(70% - 7.5px) calc(30% - 7.5px);
+        overflow: visible;
+
+        // Partidas
+        .matches {
+            width: 100%;
+        }
+    }
+
+    // Legenda
+    .caption {
+        padding: 25px 0px 0px 70px;
+    }
+}
